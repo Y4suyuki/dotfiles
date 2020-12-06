@@ -5,5 +5,3 @@
 \#.*\#       # emacs autosave files
 
 ^/README.*
-
-README.md

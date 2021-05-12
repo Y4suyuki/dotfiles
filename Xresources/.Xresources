@@ -1,0 +1,72 @@
+Xft.dpi: 140
+Xft.autohint: 0
+
+! urxvt
+
+URxvt.font: xft:Hack Nerd Font:size=12:antialias=true:hinting=true, \
+	    "xft:all-the-icons:size=12:antialias=true:hinting=true", \
+	    "xft:Font Awesome 5 Free:size=12:antialias=true:hinting=true"
+URxvt.letterSpace: -1
+
+URxvt.scrollBar: False
+
+! color scheme:
+
+urxvt*foreground: #d0d0d0
+urxvt*background: #151515
+URxvt.transparent: true
+URxvt.shading: 30
+
+*.cursorColor: #21f6bc
+*.cursorBlink: 1
+
+!
+! Black
+*.color0:      #000000
+*.color8:      #000000
+!
+! Red
+*.color1:      #ff7092
+*.color9:      #ff8aa4
+!
+! Green
+*.color2:      #00fbac
+*.color10:     #21f6bc
+!
+! Yellow
+*.color3:      #fffa6a
+*.color11:     #fff787
+!
+! Blue
+*.color4:      #00bfff
+*.color12:     #1bccfd
+!
+! Magenta
+*.color5:      #df95ff
+*.color13:     #e6aefe
+!
+! Cyan
+*.color6:      #86cbfe
+*.color14:     #99d6fc
+!
+! White
+*.color7:      #ffffff
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #ffffff
+!*.colorIT:
+!*.colorUL:
+
+
+! perl ext
+
+URxvt.perl-ext-common: default,matcher,keyboard-select
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.colorUL: #4682B4
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keyboard-select.clipboard: true

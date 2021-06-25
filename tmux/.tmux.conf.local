@@ -226,7 +226,7 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
+tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | #(pomo)"
 tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
 
 # status left style
@@ -402,17 +402,29 @@ tmux_conf_update_plugins_on_reload=true
 #   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
 # }
 #
+#
 # "$@"
 # # /!\ do not remove the previous line
 
+
+# pomo
+set -g status-interval 1
+
 # List of plugins
-set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on'
+set -g @continuum-boot 'on'
+set -g @continuum-boot-options 'alacritty'
+set -g @resurrect-capture-pane-contents 'on'
+# for vim
+set -g @resurrect-strategy-vim 'session'
+# for neovim
+set -g @resurrect-strategy-nvim 'session'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com:user/plugin'
 # set -g @plugin 'git@bitbucket.com:user/plugin'
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'

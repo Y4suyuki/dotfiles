@@ -203,5 +203,5 @@ bar {
     	position top
 }
 
-exec_always feh --bg-fill ~/Pictures/myroom.jpg
-
+exec_always feh --bg-fill ~/Pictures/PXL_20210426_033824881.MP.jpg
+exec --no-startup-id picom

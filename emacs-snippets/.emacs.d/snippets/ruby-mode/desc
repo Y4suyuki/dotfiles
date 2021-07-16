@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: desc
+# key: desc
+# group: ruby
+# --
+
+describe $1 do
+  $2
+end

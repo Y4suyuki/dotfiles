@@ -8,6 +8,7 @@ set -x VIMDATA ~/.local/share/nvim
 # set -x GOPATH ~/.local/go
 
 set -a PATH $GOPATH/bin
+fish_add_path $HOME/.cargo/bin
 
 abbr vi nvim
 abbr e 'emacs -nw'
@@ -21,4 +22,12 @@ abbr gg 'git log --oneline --graph --all --decorate'
 abbr gs 'git status'
 abbr ga 'git add'
 abbr gd 'git diff'
+
+if status --is-interactive
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+
 source ~/.asdf/asdf.fish
+starship init fish | source
+
+fish_vi_key_bindings

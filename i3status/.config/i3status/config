@@ -27,8 +27,8 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-        format_up = " %ip (%speed)"
-        format_down = " down"
+        format_up = "󰈀 %ip (%speed)"
+        format_down = "󰈀 down"
 }
 
 battery all {
@@ -39,7 +39,7 @@ battery all {
 }
 
 cpu_usage {
-	format = " %usage | %cpu0 %cpu1 %cpu2 %cpu3 | %cpu4 %cpu5 %cpu6 %cpu7"
+	format = " %usage | %cpu0 %cpu1 %cpu2 %cpu3 | %cpu4 %cpu5 %cpu6 %cpu7"
 }
 
 disk "/" {
@@ -51,7 +51,7 @@ load {
 }
 
 memory {
-        format = " %used | %available"
+        format = "mem %free %available(%used) / %total"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }

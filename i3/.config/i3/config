@@ -150,7 +150,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym --release $mod+Shift+s exec --no-startup-id "scrot -s '%Y-%m-%d:%H:%M:%S_$wx$h.png'"
-bindsym $mod+Shift+x exec --no-startup-id "i3lock -i ~/Pictures/archlinux-dark-logo.png --nofork"
+bindsym $mod+Shift+x exec --no-startup-id "i3lock -i ~/Pictures/nixos-nord.png --nofork"
 
 
 # resize window (you can also use the mouse for that)
@@ -209,5 +209,5 @@ bar {
     	position top
 }
 
-exec_always feh --bg-fill ~/Pictures/PXL_20210426_033824881.MP.jpg
+exec_always feh --bg-fill ~/Pictures/i3background/IMG_20191006_173302115-EFFECTS.jpg
 exec --no-startup-id picom

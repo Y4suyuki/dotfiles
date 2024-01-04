@@ -30,7 +30,7 @@ font pango:Hack Nerd Font 12
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-exec --no-startup-id fcitx-autostart
+exec --no-startup-id fcitx5 -d
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

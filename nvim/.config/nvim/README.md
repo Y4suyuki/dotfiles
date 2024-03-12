@@ -8,7 +8,7 @@ run stow at root
 stow nvim
 ```
 
-install packer
+install [packer](https://github.com/wbthomason/packer.nvim)
 
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\

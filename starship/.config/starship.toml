@@ -18,6 +18,14 @@ disabled = true
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 
+[aws]
+format = 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+style = 'bold yellow'
+
+[aws.region_aliases]
+ap-northeast-1 = 'tky'
+us-east-1 = 'va'
+
 [gcloud]
 format = '[$symbol$account(\($region\)\($project\))]($style) '
 

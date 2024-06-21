@@ -36,3 +36,7 @@ asia-northeast1 = "ane1"
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "
 truncation_length = 8
+
+[nix_shell]
+format = ' [$symbol$state( \($name\))]($style) '
+impure_msg = 'im'

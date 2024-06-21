@@ -1,24 +1,6 @@
 print("hello from y4suyuki")
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Example using a list of specs with the default options
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
-vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
-
-require("lazy").setup({
-  "folke/which-key.nvim"
-})
-
 require("y4suyuki.keymaps")
+require("y4suyuki.plugins.lazy")
+require("y4suyuki.options")
+require("y4suyuki.plugins.tele")

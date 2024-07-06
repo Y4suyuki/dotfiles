@@ -12,10 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		"folke/which-key.nvim"
-	},
-	'ThePrimeagen/git-worktree.nvim',
-	{
-		'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  {
+    "folke/which-key.nvim"
+  },
+  'ThePrimeagen/git-worktree.nvim',
+  {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    }
+  },
 })

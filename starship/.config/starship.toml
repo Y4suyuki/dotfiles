@@ -28,10 +28,16 @@ us-east-1 = 'va'
 
 [gcloud]
 format = '[$symbol$account(\($region\)\($project\))]($style) '
+symbol = '️🇬️ '
+detect_env_vars = ['CLOUDSDK_CORE_PROJECT', 'CLOUDSDK_COMPUTE_ZONE', 'CLOUDSDK_CONFIG']
+
 
 [gcloud.region_aliases]
 us-central1 = "uc1"
 asia-northeast1 = "ane1"
+
+[gcloud.project_aliases]
+my-playground-415616 = "pg"
 
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "

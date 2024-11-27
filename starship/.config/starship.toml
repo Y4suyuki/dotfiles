@@ -34,15 +34,24 @@ detect_env_vars = ['CLOUDSDK_CORE_PROJECT', 'CLOUDSDK_COMPUTE_ZONE', 'CLOUDSDK_C
 
 [gcloud.region_aliases]
 us-central1 = "uc1"
-asia-northeast1 = "ane1"
+asia-northeast1 = "an1"
 
 [gcloud.project_aliases]
 my-playground-415616 = "pg"
+cloud-run-tutorial-345407 = "cldrun"
 
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "
-truncation_length = 8
+truncation_length = 15
 
 [nix_shell]
 format = ' [$symbol$state( \($name\))]($style) '
 impure_msg = 'im'
+
+[direnv]
+format = '[$symbol$loaded/$allowed]($style) '
+disabled = false
+allowed_msg = '✅'
+not_allowed_msg = '🚫'
+loaded_msg = '🚚'
+unloaded_msg = '🛻'

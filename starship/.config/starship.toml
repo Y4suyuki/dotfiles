@@ -1,6 +1,8 @@
 # Get editor completions based on the config schema
 # "$schema" = 'https://starship.rs/config-schema.json'
 
+# Move the directory to the second line
+format = '$all$directory$character'
 # Inserts a blank line between shell prompts
 add_newline = true
 

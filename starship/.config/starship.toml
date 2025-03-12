@@ -51,7 +51,7 @@ format = ' [$symbol$state( \($name\))]($style) '
 impure_msg = 'im'
 
 [direnv]
-format = '[$symbol$loaded/$allowed]($style) '
+format = '[$loaded/$allowed]($style) '
 disabled = false
 allowed_msg = '✅'
 not_allowed_msg = '🚫'

@@ -15,3 +15,5 @@ vim.api.nvim_set_keymap("n", "td", ":bdelete<enter>", {noremap=false})
 --
 vim.api.nvim_set_keymap("n", "<C-W>,", ":vertical resize -10<CR>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<C-W>.", ":vertical resize +10<CR>", {noremap=true})
+
+

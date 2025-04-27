@@ -4,3 +4,5 @@ vim.o.smartcase = true
 
 vim.o.shiftwidth = 2
 vim.o.smarttab = true
+
+vim.wo.number = true

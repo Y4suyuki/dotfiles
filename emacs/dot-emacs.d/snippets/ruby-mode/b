@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: b
+# key: b
+# group: ruby
+# --
+
+binding.pry

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: fc
+# key: fc
+# group: react
+# --
+
+const $1: React.FC<$2> = ($3) => {
+  $4
+}

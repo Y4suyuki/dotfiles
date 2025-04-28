@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: fn
-# key: fn
-# group: go
-# --
-
-func $1($2) $3 {
-    $4
-}

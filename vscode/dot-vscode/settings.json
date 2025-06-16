@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.iconTheme": "material-icon-theme",
+    "vscode-neovim.neovimExecutablePaths.linux": "/home/y4suyuki/Downloads/nvim-linux64/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.activityBar.location": "bottom",
+    "window.menuBarVisibility": "hidden"
+}

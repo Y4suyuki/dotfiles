@@ -57,10 +57,3 @@ allowed_msg = '✅'
 not_allowed_msg = '🚫'
 loaded_msg = '🚚'
 unloaded_msg = '🛻'
-
-[custom.r5]
-command = 'r5 tenant show'
-when = true
-require_repo = true
-symbol = 'r5'
-format = '[$symbol \($output\)]($style)'

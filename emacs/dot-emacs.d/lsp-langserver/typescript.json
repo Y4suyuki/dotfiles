@@ -5,7 +5,16 @@
     "typescript-language-server",
     "--stdio"
   ],
-  "settings": {},
+  "settings": {
+    "typescript": {
+      "format": {
+        "convertTabsToSpaces": true,
+        "indentSize": 4,
+        "tabSize": 4,
+        "semicolons": "insert"
+      }
+    }
+  },
   "initializationOptions": {
     "preferences": {
 	  "includeCompletionsForModuleExports": false

@@ -1,0 +1,52 @@
+vmType: 'vz'
+rosetta:
+  enabled: true
+  binfmt: true
+images:
+  - location: 'https://cloud-images.ubuntu.com/releases/24.04/release/ubuntu-24.04-server-cloudimg-arm64.img'
+    arch: 'aarch64'
+cpus: 4
+memory: '8GiB'
+mounts:
+  - location: '~/gh'
+    writable: false
+  - location: '~/claude-projects'
+    writable: true
+
+provision:
+  - mode: system
+
+    script: |
+      #!/bin/bash
+      set -uxo pipefail
+      apt-get update
+      apt-get install -y curl xz-utils sudo docker.io direnv ripgrep
+
+
+      # 修正: {{.User}} に対してグループを追加
+      usermod -aG docker {{.User}}
+
+      # Nix Installer (Determinate Systems)
+      if [ ! -d /nix ]; then
+        curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
+          --no-confirm
+      fi
+
+  - mode: user
+    script: |
+      #!/bin/bash
+      # 1. Source Nix (パスが通るまで待機)
+      echo '. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' >> ~/.bashrc
+
+      # 2. Hook direnv
+      echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+
+      # 3. Enable Nix Flakes
+      mkdir -p ~/.config/nix
+      echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
+
+      # 4. AI Context (動的なパス設定)
+      echo "{\"project_root\": \"$HOME/claude-projects\"}" > ~/.ai-context.json
+
+      # 5 Install claude code
+      curl -fsSL https://claude.ai/install.sh | bash

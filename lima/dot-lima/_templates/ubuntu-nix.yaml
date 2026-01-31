@@ -12,6 +12,7 @@ mounts:
     writable: false
   - location: '~/claude-projects'
     writable: true
+    mountType: "virtiofs"
 
 provision:
   - mode: system

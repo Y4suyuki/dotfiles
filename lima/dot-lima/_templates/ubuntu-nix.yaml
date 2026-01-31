@@ -20,7 +20,7 @@ provision:
       #!/bin/bash
       set -uxo pipefail
       apt-get update
-      apt-get install -y curl xz-utils sudo docker.io direnv ripgrep docker-compose-v2 gh jq node npm coreutils
+      apt-get install -y curl xz-utils sudo docker.io direnv ripgrep docker-compose-v2 gh jq nodejs npm coreutils
 
 
       # 修正: {{.User}} に対してグループを追加

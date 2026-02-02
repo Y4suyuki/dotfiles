@@ -2,6 +2,7 @@ vmType: 'vz'
 rosetta:
   enabled: true
   binfmt: true
+mountType: "virtiofs"
 images:
   - location: 'https://cloud-images.ubuntu.com/releases/24.04/release/ubuntu-24.04-server-cloudimg-arm64.img'
     arch: 'aarch64'
@@ -12,7 +13,14 @@ mounts:
     writable: false
   - location: '~/claude-projects'
     writable: true
-    mountType: "virtiofs"
+
+networks:
+  - lima: "shared"
+    interface: "socket_vmnet"
+
+portForwards:
+  - guestPort: 3000
+    ignore: true  # Prevents Lima from auto-forwarding port 3000
 
 provision:
   - mode: system
@@ -22,7 +30,6 @@ provision:
       set -uxo pipefail
       apt-get update
       apt-get install -y curl xz-utils sudo docker.io direnv ripgrep docker-compose-v2 gh jq nodejs npm coreutils
-
 
       # 修正: {{.User}} に対してグループを追加
       usermod -aG docker {{.User}}

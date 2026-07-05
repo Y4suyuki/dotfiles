@@ -20,7 +20,25 @@
           programs.fish.enable = true;
 
           system.stateVersion = 6;
+          system.primaryUser = "y4suyuki";
+
           nixpkgs.hostPlatform = "aarch64-darwin";
+
+          nixpkgs.config.allowUnfree = true;
+
+          # macOS system defaults
+          system.defaults.trackpad.Clicking = true;
+          system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
+          system.defaults.NSGlobalDomain.InitialKeyRepeat = 10;
+          system.defaults.NSGlobalDomain.KeyRepeat = 1;
+
+          # fonts
+          fonts.packages = with pkgs; [
+            nerd-fonts.fira-code
+            nerd-fonts.droid-sans-mono
+            nerd-fonts.hack
+            nerd-fonts.symbols-only
+          ];
 
           # guard against macOS update check breakage
           system.activationScripts.checks.text = "";

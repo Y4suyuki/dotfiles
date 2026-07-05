@@ -17,11 +17,19 @@
           programs.bash.enable = true;
           programs.zsh.enable = true;
 
+          programs.fish.enable = true;
+
           system.stateVersion = 6;
           nixpkgs.hostPlatform = "aarch64-darwin";
 
           # guard against macOS update check breakage
           system.activationScripts.checks.text = "";
+
+          users.knownUsers = ["y4suyuki"];
+          users.users.y4suyuki = {
+            uid = 501;
+            shell = pkgs.fish;
+          };
         })
       ];
     };

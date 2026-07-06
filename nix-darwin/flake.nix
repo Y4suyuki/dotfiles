@@ -18,6 +18,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.y4suyuki = {
             imports = [
+              "${self}/home.nix"
               codex.homeModules.default
             ];
             home.stateVersion = "25.11";

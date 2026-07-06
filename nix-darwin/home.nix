@@ -3,6 +3,10 @@
 {
   home.stateVersion = "25.11";
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+  };
+
   programs.home-manager.enable = true;
 
   # Minimal fish config — aliases, abbrs, and prompt tools.
@@ -33,6 +37,7 @@
       fish_add_path /usr/local/sessionmanagerplugin/bin
       fish_add_path /opt/homebrew/bin
       fish_vi_key_bindings
+      fzf --fish | source
       bass source (codex configure bash | psub)
       starship init fish | source
       zoxide init fish | source
@@ -98,6 +103,7 @@
     fishPlugins.bass
     fzf
     gitui
+    git-filter-repo
     gnupg
     go
     gopls
@@ -118,6 +124,7 @@
     stow
     s3fs
     tree
+    tmux
     terraform-ls
     uv
     whisper-cpp

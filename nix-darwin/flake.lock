@@ -17,6 +17,7 @@
       },
       "original": {
         "owner": "herp-inc-hq",
+        "ref": "release-25.11",
         "repo": "codex",
         "type": "github"
       }
@@ -39,6 +40,28 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "codex",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779506708,
+        "narHash": "sha256-QOD/CNm196nCJRheux/URi4/HE66fthdOMqCJoPP1Y0=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "3ee51fbdac8c8bdfe1e7e1fcaba6520a563f394f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.11",
+        "repo": "home-manager",
         "type": "github"
       }
     },
@@ -82,7 +105,8 @@
     },
     "root": {
       "inputs": {
-        "codex": "codex"
+        "codex": "codex",
+        "home-manager": "home-manager"
       }
     },
     "treefmt-nix": {

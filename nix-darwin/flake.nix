@@ -2,14 +2,28 @@
   description = "HERP codex darwin system";
 
   inputs = {
-    codex.url = "github:herp-inc-hq/codex";
+    codex.url = "github:herp-inc-hq/codex/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.inputs.nixpkgs.follows = "codex/nixpkgs";
   };
 
-  outputs = inputs@{ self, codex }:
+  outputs = inputs@{ self, codex, home-manager }:
   {
     darwinConfigurations."GTPC25021" = codex.inputs.nix-darwin.lib.darwinSystem {
       modules = [
         codex.darwinModules.default
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.y4suyuki = {
+            imports = [
+              codex.homeModules.default
+            ];
+            home.stateVersion = "25.11";
+          };
+          home-manager.backupFileExtension = "backup";
+        }
         ({ lib, pkgs, ... }: {
           codex.standardPackages.enable = true;
 
@@ -47,6 +61,8 @@
           users.users.y4suyuki = {
             uid = 501;
             shell = pkgs.fish;
+            name = "y4suyuki";
+            home = "/Users/y4suyuki";
           };
         })
       ];

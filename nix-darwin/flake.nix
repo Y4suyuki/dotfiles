@@ -5,9 +5,12 @@
     codex.url = "github:herp-inc-hq/codex/release-25.11";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "codex/nixpkgs";
+    hunk = {
+      url = "github:modem-dev/hunk";
+    };
   };
 
-  outputs = inputs@{ self, codex, home-manager }:
+  outputs = inputs@{ self, codex, home-manager, ... }:
   {
     darwinConfigurations."GTPC25021" = codex.inputs.nix-darwin.lib.darwinSystem {
       modules = [
@@ -16,11 +19,13 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.sharedModules = [ inputs.hunk.homeManagerModules.default ];
           home-manager.users.y4suyuki = {
             imports = [
               "${self}/home.nix"
               codex.homeModules.default
             ];
+            programs.hunk.enable = true;
             home.stateVersion = "25.11";
           };
           home-manager.backupFileExtension = "backup";

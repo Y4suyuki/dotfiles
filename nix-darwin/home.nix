@@ -9,6 +9,8 @@
 
   programs.home-manager.enable = true;
 
+  programs.agent-skills.enable = true;
+
   # Minimal fish config — aliases, abbrs, and prompt tools.
   # (No home.packages yet — those come later to avoid collisions with codex.)
   programs.fish = {

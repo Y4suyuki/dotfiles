@@ -1,0 +1,79 @@
+{
+  "nodes": {
+    "agent-skills": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1789145426,
+        "narHash": "sha256-Wf+7Qzt8+nz4TXPCbWnMjOAdzbVM6blW9J6JP+YhSy8=",
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "rev": "5133c874553c6c295654d8de4e3f62c95736b9c6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "type": "github"
+      }
+    },
+    "cosense-cli": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789306755,
+        "narHash": "sha256-urnxOLzSBAcYIdVBpoxwq7fquzwF2xGLlJfMR+8k1i4=",
+        "owner": "helpfeel",
+        "repo": "cosense-cli",
+        "rev": "c94c481d29ae7cc51db64bd42fadcd7292f6b7cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "helpfeel",
+        "repo": "cosense-cli",
+        "type": "github"
+      }
+    },
+    "i-have-adhd": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789344358,
+        "narHash": "sha256-nwp682Hd3G6/KxTve/cI+udfhb4/SyWiR4qUgWVpJfk=",
+        "owner": "ayghri",
+        "repo": "i-have-adhd",
+        "rev": "4092de07ce3ed88389d77c0d623b7af89b40ac0e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ayghri",
+        "repo": "i-have-adhd",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1785571196,
+        "narHash": "sha256-KoTsyMQqnXQZq8deCEnu4QkyldkwH/bpMMhUcfMdGIw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "148bab9c1c3c53136ecb44a6ea356a0ed5b39b06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "agent-skills": "agent-skills",
+        "cosense-cli": "cosense-cli",
+        "i-have-adhd": "i-have-adhd"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

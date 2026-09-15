@@ -8,6 +8,7 @@
     hunk = {
       url = "github:modem-dev/hunk";
     };
+    skills-catalog.url = "path:./skills";
   };
 
   outputs = inputs@{ self, codex, home-manager, ... }:
@@ -19,7 +20,11 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [ inputs.hunk.homeManagerModules.default ];
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.sharedModules = [
+            inputs.hunk.homeManagerModules.default
+            inputs.skills-catalog.homeManagerModules.default
+          ];
           home-manager.users.y4suyuki = {
             imports = [
               "${self}/home.nix"

@@ -38,6 +38,16 @@
         ({ lib, pkgs, ... }: {
           codex.standardPackages.enable = true;
 
+          homebrew = {
+            enable = true;
+            taps = [
+              "FelixKratz/formulae"
+            ];
+
+            brews = [
+              "cowsay"
+            ];
+          };
           # enable nix in zsh and bash
           programs.bash.enable = true;
           programs.zsh.enable = true;

@@ -47,6 +47,9 @@
             brews = [
               "cowsay"
             ];
+            casks = [
+              "blackhole-2ch"
+            ];
           };
           # enable nix in zsh and bash
           programs.bash.enable = true;

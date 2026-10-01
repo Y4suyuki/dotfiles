@@ -13,9 +13,16 @@
       filter.maxDepth = 1;
     };
 
+    sources.local = {
+      path = ./local;
+      subdir = "skills";
+      filter.maxDepth = 1;
+    };
+
     skills.enable = [
       "cosense"
       "i-have-adhd"
+      "pr-brief"
     ];
 
     # `symlink-tree` uses rsync --delete and would take over ~/.cursor/skills.

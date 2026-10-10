@@ -118,6 +118,7 @@
     pandoc
     nodejs
     mermaid-cli
+    mpv
     pnpm
     ripgrep
     imagemagick
@@ -132,6 +133,7 @@
     whisper-cpp
     yazi
     yq
+    yt-dlp
     weechat
     zola
     zoxide

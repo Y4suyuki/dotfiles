@@ -32,5 +32,11 @@
       dest = ".cursor/skills";
       structure = "link";
     };
+
+    targets.claude = {
+      enable = true;
+      dest = ".claude/skills";
+      structure = "link";
+    };
   };
 }

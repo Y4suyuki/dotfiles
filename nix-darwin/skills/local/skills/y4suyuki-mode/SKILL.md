@@ -12,6 +12,9 @@ disable-model-invocation: true
 最初に `../poteto-mode/SKILL.md` を読み、その指示に従う。この文書と食い違うところは、この文書を優先する。
 poteto-mode が指す playbook と原則は `../poteto-mode/playbooks/` と `../principle-*/SKILL.md` にある。
 
+Claude Code で動いているときは、先に `~/.claude/pstack-docs/harness/claude-code.md` を読み、pstack に出てくる Cursor のツール名、サブエージェントの指定、モデル名、パスをその表で読み替える。
+表の `<pstack>/skills/<name>/` は `~/.claude/skills/<name>/` と読み、`<pstack>/docs/` は `~/.claude/pstack-docs/` と読む。
+
 ## 規模と影響範囲で工程を決める
 
 作業を始める前に、影響範囲を判定して返答の冒頭で宣言する。
@@ -61,7 +64,7 @@ poteto-mode の `prove-it-works` に従い、エージェントが実物の画�
 
 poteto-mode の Subagents を次のとおり置き換える。
 
-- `poteto-agent` は入っていない。Cursor では `generalPurpose`、Claude Code では `general-purpose` を使う。
+- `poteto-agent` は入っていない。代わりに汎用のサブエージェント（Cursor では `generalPurpose`、Claude Code では `general-purpose`）を使う。
 - モデルはユーザーが指定しない限り親のモデルを使う。
 - 実装の委譲はしてよい。ただし段階ごとにコミットし、差分をユーザーにレビューしてもらってから次の段階に進む。
 

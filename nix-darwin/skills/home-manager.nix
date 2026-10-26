@@ -48,4 +48,8 @@
       structure = "link";
     };
   };
+
+  # pstack skills use Cursor tool names. Claude Code maps them with this
+  # adapter, which lives outside pstack/skills and so is not a skill.
+  home.file.".claude/pstack-docs".source = "${cursor-plugins}/pstack/docs";
 }

@@ -29,6 +29,7 @@
       "cosense"
       "i-have-adhd"
       "pr-brief"
+      "y4suyuki-mode"
     ];
 
     skills.enableAll = [ "pstack" ];

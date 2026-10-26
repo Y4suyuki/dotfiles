@@ -84,6 +84,22 @@
         "type": "github"
       }
     },
+    "cursor-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792892977,
+        "narHash": "sha256-ccSz2dGaXlo69t6A7qn2xQ2uLPjQ2OqSGV2fjDEQ3Bc=",
+        "owner": "cursor",
+        "repo": "plugins",
+        "rev": "99b609a72323b70204eab407c622f436e858e112",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cursor",
+        "repo": "plugins",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -293,6 +309,7 @@
       "inputs": {
         "agent-skills": "agent-skills",
         "cosense-cli": "cosense-cli",
+        "cursor-plugins": "cursor-plugins",
         "i-have-adhd": "i-have-adhd"
       },
       "locked": {

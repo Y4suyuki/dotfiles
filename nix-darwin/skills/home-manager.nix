@@ -1,6 +1,12 @@
-{ cosense-cli, i-have-adhd }:
+{ cosense-cli, i-have-adhd, cursor-plugins }:
 {
   programs.agent-skills = {
+    sources.pstack = {
+      path = cursor-plugins;
+      subdir = "pstack/skills";
+      filter.maxDepth = 1;
+    };
+
     sources.cosense-cli = {
       path = cosense-cli;
       subdir = "skills";
@@ -24,6 +30,8 @@
       "i-have-adhd"
       "pr-brief"
     ];
+
+    skills.enableAll = [ "pstack" ];
 
     # `symlink-tree` uses rsync --delete and would take over ~/.cursor/skills.
     # `link` only adds the selected skill via home.file, so existing skills stay.

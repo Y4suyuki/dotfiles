@@ -1,6 +1,12 @@
-{ cosense-cli, i-have-adhd }:
+{ cosense-cli, i-have-adhd, cursor-plugins }:
 {
   programs.agent-skills = {
+    sources.pstack = {
+      path = cursor-plugins;
+      subdir = "pstack/skills";
+      filter.maxDepth = 1;
+    };
+
     sources.cosense-cli = {
       path = cosense-cli;
       subdir = "skills";
@@ -23,7 +29,10 @@
       "cosense"
       "i-have-adhd"
       "pr-brief"
+      "y4suyuki-mode"
     ];
+
+    skills.enableAll = [ "pstack" ];
 
     # `symlink-tree` uses rsync --delete and would take over ~/.cursor/skills.
     # `link` only adds the selected skill via home.file, so existing skills stay.
@@ -39,4 +48,8 @@
       structure = "link";
     };
   };
+
+  # pstack skills use Cursor tool names. Claude Code maps them with this
+  # adapter, which lives outside pstack/skills and so is not a skill.
+  home.file.".claude/pstack-docs".source = "${cursor-plugins}/pstack/docs";
 }

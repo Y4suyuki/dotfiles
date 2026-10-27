@@ -11,15 +11,19 @@
       url = "github:ayghri/i-have-adhd";
       flake = false;
     };
+    cursor-plugins = {
+      url = "github:cursor/plugins";
+      flake = false;
+    };
   };
 
   outputs =
-    { agent-skills, cosense-cli, i-have-adhd, ... }:
+    { agent-skills, cosense-cli, i-have-adhd, cursor-plugins, ... }:
     {
       homeManagerModules.default = {
         imports = [
           agent-skills.homeManagerModules.default
-          (import ./home-manager.nix { inherit cosense-cli i-have-adhd; })
+          (import ./home-manager.nix { inherit cosense-cli i-have-adhd cursor-plugins; })
         ];
       };
     };
